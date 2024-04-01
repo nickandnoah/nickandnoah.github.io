@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>js-bucket-listing</title>
+        <title>Nick &amp; Noah: The Archives</title>
         <link
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -54,6 +54,7 @@
 
             function listObjects() {
                 var url = `https://${bucketName}.s3.${bucketRegion}.amazonaws.com/`;
+                console.log(url);
                 const queryString = window.location.search;
                 // console.log(queryString);
                 const urlParams = new URLSearchParams(queryString);
@@ -121,12 +122,12 @@
                                 continue;
                             }
 
-                            //console.log(key);
+                            console.log(key);
 
                             // if prefix is set, only show files that match that prefix
                             if (prefix) {
                                 if ((!key.startsWith(prefix)) || (key == prefix)) {
-                                    // console.log(` skipping ${key}`);
+                                    console.log(` skipping ${key}`);
                                     continue;
                                 }
                             } else {
